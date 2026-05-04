@@ -7,7 +7,7 @@
 Use this URL for the source of the module. See the usage examples below for more details.
 
 ```hcl
-github.com/pbs/terraform-aws-MOD_NAME?ref=x.y.z
+github.com/pbs/terraform-aws-MOD_NAME?ref=0.0.1
 ```
 
 ### Alternative Installation Methods
@@ -25,7 +25,7 @@ Integrate this module like so:
 
 ```hcl
 module "MOD_SHORTNAME" {
-  source = "github.com/pbs/terraform-aws-MOD_NAME?ref=x.y.z"
+  source = "github.com/pbs/terraform-aws-MOD_NAME?ref=0.0.1"
 
   <!-- TODO -->
   Show some examples of valid values for required parameters.
@@ -45,7 +45,7 @@ module "MOD_SHORTNAME" {
 
 If this repo is added as a subtree, then the version of the module should be close to the version shown here:
 
-`x.y.z`
+`0.0.1`
 
 Note, however that subtrees can be altered as desired within repositories.
 
