@@ -10,10 +10,21 @@ variable "environment" {
   }
 }
 
+variable "owner" {
+  description = "Tag used to group resources according to owner"
+
+  default = "example"
+
+  validation {
+    condition     = can(regex("[a-z\\-]+", var.owner))
+    error_message = "The owner variable violates approved regex."
+  }
+}
+
 variable "product" {
   description = "Tag used to group resources according to application"
 
-  default = "example-tf-MOD_SHORTNAME-basic"
+  default = "ex-tf-serverless-basic"
 
   validation {
     condition     = can(regex("[a-z\\-]+", var.product))
@@ -24,7 +35,7 @@ variable "product" {
 variable "repo" {
   description = "Tag used to point to the repo using this module"
 
-  default = "https://github.com/pbs/terraform-MOD_NAME.git"
+  default = "https://github.com/pbs/terraform-aws-elasticache-serverless-redis-and-memcached-module.git"
 
   validation {
     condition     = can(regex("(?:git|ssh|https?|git@[-\\w.]+):(\\/\\/)?(.*?)(\\.git)(\\/?|\\#[-\\d\\w._]+?)$", var.repo))

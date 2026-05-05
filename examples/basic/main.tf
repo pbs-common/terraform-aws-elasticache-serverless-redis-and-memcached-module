@@ -1,8 +1,9 @@
-module "MOD_SHORTNAME" {
+module "serverless_cache" {
   source = "../.."
 
   organization = var.organization
   environment  = var.environment
   product      = var.product
   repo         = var.repo
+  owner        = var.owner
 }
